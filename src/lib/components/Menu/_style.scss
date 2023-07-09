@@ -1,0 +1,112 @@
+.ting-menu {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-left: 0;
+  list-style: none;
+  font-weight: 700;
+  align-items: center;
+  >.ting-menu-item {
+    padding: .5rem 1rem;
+    cursor: pointer;
+    &:hover, &:focus {
+      text-decoration: none;
+    }
+    &.is-disabled {
+      color: $avtive-color;
+      pointer-events: none;
+      cursor: none;
+    }
+  }
+  .ting-submenu-item {
+    position: relative;
+    .arrow-icon {
+      transform: translateY(4px);
+      transition: transform .3s ease-in-out;
+      width: 1.2rem;
+      height: 1rem;
+    }
+    &:hover {
+      .arrow-icon {
+        transform: rotate(180deg) translateY(-4px);
+      }
+    }
+    &.is-vertical {
+      .arrow-icon {
+        transform: rotate(0deg) !important;
+      }
+    }
+    &.is-vertical.is-opened {
+      .arrow-icon {
+        transform: rotate(180deg) !important;
+      }
+    }
+  }
+  .ting-submenu {
+    list-style:none;
+    padding-left: 0;
+    white-space: nowrap;
+    .ting-menu-item {
+      font-weight: 400;
+      padding: .4rem 1rem;
+      cursor: pointer;
+      color: $default;
+      &.is-active, &:hover {
+        color: $highlight;
+        background: rgb(44, 49, 54);
+      }
+    }
+  }
+}
+
+.menu-horizontal {
+  >.ting-menu-item {
+    border-bottom: 3px solid transparent;
+    &.is-active, &:hover {
+      background: rgb(239,228,212);
+      background: linear-gradient(0deg, rgba(239,228,212,1) 0%, rgba(172,167,158,1) 0%, rgba(148,145,139,1) 0%, rgba(108,109,107,1) 0%, rgba(79,82,83,1) 0%, rgba(1,10,19,1) 100%);
+      color: $highlight;
+      border-bottom: 3px solid $border-color-highlight;
+    }
+    &.is-active {
+      border-bottom: 3px solid #caab6a;
+    }
+  }
+  .ting-submenu {
+    position: absolute;
+    background: $background-color;
+    z-index: 100;
+    top: calc(100% + 8px);
+    left: 0;
+    border: 1px solid $avtive-color;
+  }
+
+}
+
+
+.ting-menu.menu-vertical {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: normal;
+  border-bottom: 0;
+  >.ting-menu-item {
+    border-left: 3px solid transparent;
+    &.is-active, &:hover {
+      color: $highlight;
+      border-left: 3px solid $border-color-highlight;
+    }
+    &.is-active {
+      border-left: 3px solid #caab6a;
+    }
+  }
+  .ting-submenu {
+    .ting-menu-item {
+      &.is-active, &:hover {
+        color: $highlight;
+        border-right: 2px solid #caab6a;
+      }
+    }
+  }
+}
+
+

@@ -11,8 +11,10 @@ interface BaseButtonProps{
   name:string
 }
 
+//如果不同属性直接合并，相关属性取交集
 type NativeButtonProps = BaseButtonProps&React.ButtonHTMLAttributes<HTMLElement>
 type AnchorButtonProps = BaseButtonProps&React.AnchorHTMLAttributes<HTMLElement>
+//Partial:把属性变成可选属性
 export type ButtonProps = Partial<NativeButtonProps&AnchorButtonProps>
 
 const Button:React.FC<ButtonProps> = (props)=>{

@@ -1,16 +1,20 @@
 import React from "react"
-import './importAllIcons'
-import './icon.scss'
-import classes from "../helpers/classes"
+import classNames from "classnames"
 
-interface IconProps extends React.SVGAttributes<SVGAElement>{
-  name: string
+// let importAll = (requireContext: __WebpackModuleApi.RequireContext) => requireContext.keys().forEach(requireContext);
+// try {importAll(require.context('./icons', true, /\.svg$/));} catch (error) {console.log(error);}
+
+interface IconProps extends React.SVGAttributes<SVGElement>{
+  name: string;
+  spin?:boolean
 }
 
-const Icon: React.FunctionComponent<IconProps> = ({className,name,...restProps})=>{
+const Icon: React.FunctionComponent<IconProps> = ({className,name,spin,...restProps})=>{
   return (
     <svg
-      className={classes('king-icon',className)}
+      className={classNames('king-icon',className,{
+        'spin':spin
+      })}
       {...restProps}
     >
       <use xlinkHref={'#'+name}/>

@@ -1,4 +1,4 @@
-$white:    #fff !default;
+$white:    #ffffff !default;
 $gray-100: #f8f9fa !default;
 $gray-200: #e9ecef !default;
 $gray-300: #dee2e6 !default;
@@ -52,7 +52,7 @@ $font-family-base: $font-family-sans-serif !default;
 // 字体大小
 $font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
 $font-size-lg:                $font-size-base * 1.25 !default;
-$font-size-sm:                $font-size-base * .875 !default;
+$font-size-sm:                $font-size-base * .8 !default;
 $font-size-root:              null !default;
 
 // 字重
@@ -289,3 +289,26 @@ $progress-bg:                       $gray-200 !default;
 $progress-border-radius:            $border-radius !default;
 $progress-bar-color:                $white !default;
 $progress-bar-transition:           width .6s ease !default;
+
+
+
+//主要颜色
+$default:       #cdbe91;
+//背景颜色
+$background-color: #010a13;
+//标题字体
+$title: #f0e6d2;
+
+//按钮高亮颜色
+$highlight:      #f0e6d2;
+//按钮边框
+$border-color:  #c89f48;
+//边框高亮
+$border-color-highlight: #efe4d4;
+//点击颜色
+$avtive-color: #7e6531;
+
+//青色按钮字体颜色
+$primary: #a3c7c7;
+//青色高亮
+$primary-height: #f0e6d2;

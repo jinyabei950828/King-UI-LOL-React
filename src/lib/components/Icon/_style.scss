@@ -1,0 +1,14 @@
+.king-icon{
+  width: 2em;
+  height: 2em;
+  fill: #cdbe91;
+  &.spin{
+
+    animation: circle 1.5s infinite linear;
+    @keyframes circle{
+      0%{ transform:rotate(0deg); }
+      100%{ transform:rotate(360deg); }
+    }
+  }
+}
+
